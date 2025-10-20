@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-10-14T19:22:21-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Quant Prep</title><subtitle>A website for quant to prepare online assessment and interviews.
+</subtitle><author><name>Yourui Wang</name></author><entry><title type="html">Probability</title><link href="http://localhost:4000/jekyll/2025-10-14-prob.html" rel="alternate" type="text/html" title="Probability" /><published>2025-10-14T00:00:00-04:00</published><updated>2025-10-14T00:00:00-04:00</updated><id>http://localhost:4000/jekyll/prob</id><content type="html" xml:base="http://localhost:4000/jekyll/2025-10-14-prob.html"><![CDATA[<h2 id="knowlege-1-important-distributions">Knowlege 1. Important Distributions</h2>
+
+<h3 id="knowlege-1-geometric-distribution">Knowlege 1 (Geometric Distribution)</h3>
+
+<p>If $X$ conforms to <strong>geometric distribution</strong> with parameter $p$, then $X$ counts the number of trials unitl the first sucess in a sequence of independent Bernoulli trials with probability $p$, the probability distribution of $X$ is
+\(\mathbb{P}(X=n)=(1-p)^{n-1}p,\quad n=1, 2, \cdots\)</p>
+
+<p>Then $X$ has the property that</p>
+
+\[\mathbb{E}(X)=\frac{1}{p}, \text{Var}(X)=\frac{1-p}{p^2}\]
+
+<p>An intuitive way to understand the expectation of $X$ is,</p>
+
+<ul>
+  <li>Each trial succeeds with prob $p$</li>
+  <li>On average, among $n$ trials you expect $np$ successes</li>
+  <li>To get 1 success, you need $n=1/p$ trials on average</li>
+</ul>
+
+<h2 id="knowlege-2-important-calculus">Knowlege 2. Important Calculus</h2>
+
+<h3 id="knowlege-2-1">Knowlege 2-1</h3>
+
+\[\int_{-\infty}^{+\infty}e^{-x^2}dx=\sqrt{\pi}\]
+
+<p><strong>Comment</strong></p>
+
+<ul>
+  <li>Notice that this is exactly $\Gamma(1/2)$ in <a href="#knowlege-2-3-gamma-function"><strong>Knowlege 2-3 (Gamma Function)</strong></a></li>
+  <li>Related to the probability density function of normal distribution</li>
+</ul>
+
+<h3 id="knowlege-2-2-beta-function"><strong>Knowlege 2-2 (Beta Function)</strong></h3>
+
+<p>Beta function $B(x,y)$ is defined as</p>
+
+\[B(x,y)=\int_0^1t^{x-1}(1-t)^{y-1}dt\]
+
+<p>where $x&gt;0$ and $y &gt; 0$. It has the properties like</p>
+
+\[B(x,y)=B(y,x)\]
+
+\[B(x,y+1)=\frac{y}{x+y}B(x,y)\]
+
+<h3 id="knowlege-2-3-gamma-function"><strong>Knowlege 2-3 (Gamma Function)</strong></h3>
+
+<p>Gamma function $\Gamma(z)$ is defined as</p>
+
+\[\Gamma(z)=\int_0^\infty t^{z-1}e^{-t}dt\]
+
+<p>where $z&gt;0$. It has properties like</p>
+
+\[\Gamma(z+1)=z\Gamma(z),\quad \Gamma(n)=(n-1)!\text{ if }n\in\mathbb{N}^+\]
+
+\[\Gamma(z)\Gamma(1-z)=\frac{\pi}{\sin(\pi z)}\text{ where }x\notin\mathbb{N},\quad \Gamma(\frac{1}{2})=\sqrt{\pi}\]
+
+\[B(x,y)=\frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}\]
+
+<p><strong>Comment</strong></p>
+
+<ul>
+  <li>Notice that $\Gamma(\frac{1}{2})=\sqrt{\pi}$ is exactly $\int_{-\infty}^{+\infty}e^{-x^2}dx$ in <a href="#knowlege-2-1"><strong>Knowlege 2-1</strong></a></li>
+</ul>]]></content><author><name>Yourui Wang</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Knowlege 1. Important Distributions]]></summary></entry></feed>
