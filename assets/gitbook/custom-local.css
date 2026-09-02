@@ -1,5 +1,249 @@
-/* This file is kept intentionally blank inside the jekyll-github-theme
- * It gets imported at the end of custom.css
- * Its purpose is for users of the theme to be able to add css rules from a blank file
- *   these get simply added to the ones already active in the layout.
- */
+/* ==========================================================================
+   "Studio" restyle — Quant Notes
+   Fraunces (headings) + Public Sans (body/UI), white ground, deep-teal accent.
+   Layered on top of the vendored jekyll-gitbook framework: we only touch
+   color, type and spacing here, never the .book/.book-summary layout
+   mechanics the theme's JS depends on.
+   ========================================================================== */
+
+:root {
+    --qn-bg:        #ffffff;
+    --qn-surface:   #f3f6f5;   /* sidebar + equation blocks */
+    --qn-surface-2: #eaf0ee;   /* hover / active states */
+    --qn-text:      #12181a;
+    --qn-muted:     #5a6a6b;
+    --qn-border:    #dfe6e4;
+    --qn-accent:    #0f7a72;
+    --qn-accent-bg: #e3f0ee;
+
+    --qn-font-display: "Fraunces", Georgia, serif;
+    --qn-font-body:    "Public Sans", -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ---------- ground + base type ---------- */
+
+.book,
+.book .book-body,
+.book .book-body .body-inner,
+.book .book-body .page-wrapper {
+    background: var(--qn-bg);
+    color: var(--qn-text);
+}
+
+.book,
+.book .book-body,
+.book .markdown-section,
+.book .book-summary,
+.book .book-header .btn,
+.book .dropdown-menu {
+    font-family: var(--qn-font-body) !important;
+}
+
+.book .markdown-section {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #28393b;
+}
+
+.book .markdown-section p,
+.book .markdown-section li {
+    color: #28393b;
+}
+
+/* ---------- headings ---------- */
+
+.book .markdown-section h1,
+.book .markdown-section h2,
+.book .markdown-section h3,
+.book .markdown-section h4,
+.book .markdown-section h5,
+.book .markdown-section h6 {
+    font-family: var(--qn-font-display) !important;
+    font-weight: 600;
+    color: var(--qn-text);
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+}
+
+.book .markdown-section h1 {
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.book .markdown-section h2 {
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--qn-border);
+    padding-bottom: 8px;
+    margin-top: 2.4em;
+}
+
+.book .markdown-section h3 {
+    font-size: 1.2rem;
+    margin-top: 2em;
+}
+
+.book .markdown-section h4 {
+    font-size: 1.02rem;
+    font-style: italic;
+    color: var(--qn-accent);
+    margin-top: 1.8em;
+}
+
+/* ---------- links ---------- */
+
+.book .markdown-section a,
+.book .markdown-section a:visited {
+    color: var(--qn-accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--qn-accent-bg);
+}
+
+.book .markdown-section a:hover {
+    border-bottom-color: var(--qn-accent);
+}
+
+/* ---------- equations & callouts ---------- */
+/* MathJax block output gets a soft panel to match the "Studio" mockup */
+
+.book .markdown-section mjx-container[display="true"] {
+    background: var(--qn-surface);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 1.1em 0;
+    overflow-x: auto;
+}
+
+.book .markdown-section strong {
+    color: var(--qn-text);
+}
+
+/* ---------- tables ---------- */
+
+.book .markdown-section table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.92rem;
+    margin: 1.2em 0;
+}
+
+.book .markdown-section table th {
+    text-align: left;
+    font-family: var(--qn-font-body) !important;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--qn-muted);
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--qn-border);
+    background: none;
+}
+
+.book .markdown-section table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--qn-border);
+    font-variant-numeric: tabular-nums;
+    color: #28393b;
+}
+
+.book .markdown-section table tr:nth-child(even) {
+    background: none;
+}
+
+/* ---------- inline code / pre ---------- */
+
+.book .markdown-section code {
+    background: var(--qn-surface);
+    color: var(--qn-accent);
+    border-radius: 4px;
+    padding: 0.1em 0.4em;
+    font-size: 0.88em;
+}
+
+.book .markdown-section pre {
+    background: var(--qn-surface) !important;
+    border: 1px solid var(--qn-border);
+    border-radius: 8px;
+}
+
+.book .markdown-section pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+}
+
+/* ---------- sidebar (.book-summary) ---------- */
+
+.book .book-summary {
+    background: var(--qn-surface);
+    border-right: 1px solid var(--qn-border);
+    box-shadow: none;
+}
+
+.book .book-summary ul.summary {
+    font-family: var(--qn-font-body) !important;
+}
+
+.book .book-summary a {
+    color: var(--qn-muted);
+    font-size: 0.86rem;
+    padding: 7px 16px;
+}
+
+.book .book-summary a:hover {
+    color: var(--qn-text);
+    background: var(--qn-surface-2);
+    text-decoration: none;
+}
+
+.book .book-summary li.chapter.active > a {
+    color: var(--qn-accent);
+    background: var(--qn-accent-bg);
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+/* site title = first item in the summary list */
+.book .book-summary ul.summary > li.chapter:first-child > a {
+    font-family: var(--qn-font-display) !important;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--qn-text);
+    padding-top: 18px;
+}
+
+.book .book-summary li.divider {
+    background: var(--qn-border);
+}
+
+.book .book-summary .chapter ul li a::before,
+.book .book-summary .chapter ul li a::after {
+    display: none;
+}
+
+#book-search-input input,
+#book-search-input-inside input {
+    font-family: var(--qn-font-body) !important;
+    color: var(--qn-text);
+}
+
+/* ---------- top toolbar ---------- */
+
+.book .book-header {
+    background: var(--qn-bg) !important;
+    border-bottom: 1px solid var(--qn-border);
+}
+
+.book .book-header .btn {
+    color: var(--qn-muted);
+}
+
+.book .book-header .btn:hover {
+    color: var(--qn-accent);
+}
+
+/* ---------- selection ---------- */
+
+.book .markdown-section ::selection {
+    background: var(--qn-accent-bg);
+    color: var(--qn-text);
+}
