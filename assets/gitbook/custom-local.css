@@ -66,24 +66,30 @@
 }
 
 .book .markdown-section h1 {
-    font-size: 2rem;
+    /* NB: the theme sets html{font-size:10px} as its zoom-step base unit,
+       so headings here are sized in px (not rem) to land at their intended
+       visual size instead of 62.5% of it. */
+    font-size: 32px;
+    line-height: 1.25;
     margin-top: 0;
 }
 
 .book .markdown-section h2 {
-    font-size: 1.5rem;
+    font-size: 24px;
+    line-height: 1.3;
     border-bottom: 1px solid var(--qn-border);
     padding-bottom: 8px;
     margin-top: 2.4em;
 }
 
 .book .markdown-section h3 {
-    font-size: 1.2rem;
+    font-size: 19px;
+    line-height: 1.35;
     margin-top: 2em;
 }
 
 .book .markdown-section h4 {
-    font-size: 1.02rem;
+    font-size: 16px;
     font-style: italic;
     color: var(--qn-accent);
     margin-top: 1.8em;
@@ -122,14 +128,14 @@
 .book .markdown-section table {
     border-collapse: collapse;
     width: 100%;
-    font-size: 0.92rem;
+    font-size: 15px;
     margin: 1.2em 0;
 }
 
 .book .markdown-section table th {
     text-align: left;
     font-family: var(--qn-font-body) !important;
-    font-size: 0.72rem;
+    font-size: 12px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--qn-muted);
@@ -185,7 +191,8 @@
 
 .book .book-summary a {
     color: var(--qn-muted);
-    font-size: 0.86rem;
+    font-size: 13px;
+    line-height: 1.4;
     padding: 7px 16px;
 }
 
@@ -206,9 +213,16 @@
 .book .book-summary ul.summary > li.chapter:first-child > a {
     font-family: var(--qn-font-display) !important;
     font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 17px;
     color: var(--qn-text);
     padding-top: 18px;
+}
+
+/* top-level page entries (Probability, Option, …) read slightly
+   heavier than the h2/h3 sub-entries nested under them */
+.book .book-summary ul.summary > li.chapter > a {
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .book .book-summary li.divider {
